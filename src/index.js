@@ -1,11 +1,21 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App";
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+import { Provider } from 'react-redux';
+import { Theme } from '@twilio-paste/core/theme';
+
+import Application from './components/Application';
+import { store } from './store';
+
+import './index.css';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById("root")
+  <Provider store={store}>
+    <Theme.Provider theme="default">
+      <React.StrictMode>
+        <Application />
+      </React.StrictMode>
+    </Theme.Provider>
+  </Provider>,
+  document.getElementById('root')
 );
