@@ -7,13 +7,13 @@ import { Task } from './Task';
 
 export const AllTasks = () => {
   const tasks = useSelector((state) => state.tasks);
-
+  console.log(tasks)
   return (
     <Box width="100%" margin="space100" padding="space50">
       <Heading>Tasks</Heading>
       <CreateTask />
       <Stack orientation="vertical" spacing="space60">
-        {tasks.map((task) => (
+        {tasks?.map((task) => (
           <Task key={task.id} taskId={task.id} />
         ))}
       </Stack>

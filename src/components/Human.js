@@ -12,7 +12,7 @@ export const Human = ({ humanId }) => {
     <Card>
       <h2>{human.name}</h2>
       <Stack orientation="vertical" spacing="space60">
-        {human.taskIds.map((taskId) => (
+        {human?.taskIds?.map((taskId) => (
           <Task key={taskId} taskId={taskId} />
         ))}
       </Stack>
